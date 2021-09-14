@@ -13,5 +13,6 @@ app.get("/", function(req, res){
 
 
 app.listen(HTTP_PORT, function(){
-    console.log(`server is listening on: ${HTTP_PORT}`);
+    console.log(`server is listening on: ${HTTP_PORT} testing`);
 });
+
