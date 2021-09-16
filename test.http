@@ -1,16 +1,18 @@
-# GET http://localhost:8080/api/restaurants?page=str&perPage=5&borough=String
+GET http://localhost:8080/api/restaurants?page=1&perPage=5&borough=String
 
-POST http://localhost:8080/api/restaurants
-Content-Type: application/json
+# GET http://localhost:8080/api/restaurants/5eb3d668b31de5d588f42936
 
-{
-    "address": {
-        "building": "testString",
-        "coord": [20, 20],
-        "street": "Strinng",
-        "zipcode": "String"
-    }
-}
+# POST http://localhost:8080/api/restaurants
+# Content-Type: application/json
+
+# {
+#     "address": {
+#         "building": "testString",
+#         "coord": [20, 20],
+#         "street": "Strinng",
+#         "zipcode": "String"
+#     }
+# }
 
 # {
 #     "address": {
@@ -31,7 +33,7 @@ Content-Type: application/json
 # }
 
 
-# PUT http://localhost:8080/api/restaurants/614106751a2ff33f2542cfb1
+# PUT http://localhost:8080/api/restaurants/5eb3d668b31de5d588f42936
 # Content-Type: application/json
 
 # {
@@ -52,4 +54,4 @@ Content-Type: application/json
 #     "restaurant_id": "update"
 # }
 
-# DELETE http://localhost:8080/api/restaurants/61414c4051ffa28d0e05dc94
+# DELETE http://localhost:8080/api/restaurants/5eb3d668b31de5d588f42937
