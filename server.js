@@ -1,6 +1,16 @@
+/*********************************************************************************
+* WEB422 – Assignment 1
+* I declare that this assignment is my own work in accordance with Seneca Academic Policy. 
+* No part of this assignment has been copied manually or electronically from any other source
+* (including web sites) or distributed to other students.
+* 
+* Name: Stephen Ditta Student ID: 033787144 Date: 09/16/2021
+* Heroku Link: https://serene-dawn-47935.herokuapp.com/
+*
+********************************************************************************/
+
 const express = require('express');
 const cors = require('cors');
-const { celebrate, Joi, errors, Segments, CelebrateError } = require('celebrate');
 const {query, validationResult} = require('express-validator');
 
 const RestaurantDB = require("./modules/restaurantDB");
@@ -10,7 +20,6 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use(errors()); //middleware for celebrate errors 
 
 const HTTP_PORT = process.env.PORT || 8080;
 
@@ -38,27 +47,25 @@ app.post("/api/restaurants", function(req, res){
 
 //READ (ALL based on arguments provided)
 //allows for url to be api/restaurants?page=1&perPage=5&borough=Bronx
-app.get("/api/restaurants", celebrate({
-    [Segments.QUERY]: {
-        page: Joi.number().integer(),
-        perPage: Joi.number().integer(),
-        borough: Joi.string().default('')
-      }
-}), async function(req, res){
-
+app.get("/api/restaurants",[
+    query(['page', 'perPage']).isInt({min: 1}).withMessage('page param must be a whole number greater than 1'),
+    query(['page', 'perPage']).isString().withMessage('page param must integer')
+], async function(req,res) {
     const storedPage = req.query.page;
     const storedperPage = req.query.perPage
     const storedBorough = req.query.borough;
 
+    const errors = validationResult(req);
+
+    if(!errors.isEmpty()){
+        return res.status(400).json({errors: errors.array()})
+    }
     if(storedPage != undefined || storedperPage != undefined){
         res.json(await db.getAllRestaurants(storedPage, storedperPage, storedBorough));
     }else{
         res.status(400).json({message: "Please provide parames"});
     }
-
 });
-
-
 
 
 //READ (ONE)

@@ -2,34 +2,34 @@ GET http://localhost:8080/api/restaurants?page=1&perPage=5&borough=String
 
 # GET http://localhost:8080/api/restaurants/5eb3d668b31de5d588f42936
 
-# POST http://localhost:8080/api/restaurants
+# POST https://serene-dawn-47935.herokuapp.com/api/restaurants
 # Content-Type: application/json
 
-# {
-#     "address": {
-#         "building": "testString",
-#         "coord": [20, 20],
-#         "street": "Strinng",
-#         "zipcode": "String"
-#     }
-# }
+# # {
+# #     "address": {
+# #         "building": "testString",
+# #         "coord": [20, 20],
+# #         "street": "Strinng",
+# #         "zipcode": "String"
+# #     }
+# # }
 
 # {
 #     "address": {
-#         "building": "testString",
+#         "building": "liveString",
 #         "coord": [20, 20],
-#         "street": "Strinng",
-#         "zipcode": "String"
+#         "street": "liveString",
+#         "zipcode": "liveString"
 #     },
-#     "borough": "String",
-#     "cuisine": "String",
+#     "borough": "liveString",
+#     "cuisine": "liveString",
 #     "grades": [{
 #         "date": "2014-06-10",
-#         "grade": "String",
+#         "grade": "liveString",
 #         "score": 5
 #     }],
-#     "name": "String",
-#     "restaurant_id": "String"
+#     "name": "liveString",
+#     "restaurant_id": "liveString"
 # }
 
 
@@ -54,4 +54,4 @@ GET http://localhost:8080/api/restaurants?page=1&perPage=5&borough=String
 #     "restaurant_id": "update"
 # }
 
-# DELETE http://localhost:8080/api/restaurants/5eb3d668b31de5d588f42937
+# DELETE https://serene-dawn-47935.herokuapp.com/api/restaurants/6143828fe8818695d27664d5
