@@ -1,4 +1,4 @@
-GET http://localhost:8080/api/restaurants?page=1&perPage=5&borough=String
+# GET https://serene-dawn-47935.herokuapp.com/api/restaurants?page=s&perPage=5&borough=String
 
 # GET http://localhost:8080/api/restaurants/5eb3d668b31de5d588f42936
 
@@ -16,42 +16,42 @@ GET http://localhost:8080/api/restaurants?page=1&perPage=5&borough=String
 
 # {
 #     "address": {
-#         "building": "liveString",
+#         "building": "testingliveString",
 #         "coord": [20, 20],
-#         "street": "liveString",
-#         "zipcode": "liveString"
+#         "street": "testingliveString",
+#         "zipcode": "testingliveString"
 #     },
-#     "borough": "liveString",
-#     "cuisine": "liveString",
+#     "borough": "testingliveString",
+#     "cuisine": "testingliveString",
 #     "grades": [{
 #         "date": "2014-06-10",
-#         "grade": "liveString",
+#         "grade": "testingliveString",
 #         "score": 5
 #     }],
-#     "name": "liveString",
-#     "restaurant_id": "liveString"
+#     "name": "testingliveString",
+#     "restaurant_id": "testingliveString"
 # }
 
 
-# PUT http://localhost:8080/api/restaurants/5eb3d668b31de5d588f42936
+# PUT https://serene-dawn-47935.herokuapp.com/api/restaurants/614538276c4ca39d7d317b73
 # Content-Type: application/json
 
 # {
 #     "address": {
-#         "building": "update",
+#         "building": "liveupdated",
 #         "coord": [20, 20],
-#         "street": "update",
-#         "zipcode": "update"
+#         "street": "liveupdated",
+#         "zipcode": "liveupdated"
 #     },
-#     "borough": "update",
-#     "cuisine": "update",
+#     "borough": "liveupdated",
+#     "cuisine": "liveupdated",
 #     "grades": [{
 #         "date": "2014-06-10",
-#         "grade": "update",
+#         "grade": "liveupdated",
 #         "score": 5
 #     }],
-#     "name": "update",
-#     "restaurant_id": "update"
+#     "name": "liveupdated",
+#     "restaurant_id": "liveupdated"
 # }
 
-# DELETE https://serene-dawn-47935.herokuapp.com/api/restaurants/6143828fe8818695d27664d5
+# DELETE https://serene-dawn-47935.herokuapp.com/api/restaurants/614538276c4ca39d7d317b73
