@@ -55,8 +55,7 @@ app.post("/api/restaurants", function(req, res){
 //allows for url to be api/restaurants?page=1&perPage=5&borough=Bronx
 app.get("/api/restaurants",[
     query('page').isInt({min: 1}).withMessage('page param must be a whole number greater than 1'),
-    query('perPage').isInt({min: 1}).withMessage('page param must be a whole number greater than 1'),
-    query('borough').isString().withMessage('Must be a string')
+    query('perPage').isInt({min: 1}).withMessage('page param must be a whole number greater than 1')
 ], async function(req,res) {
     const storedPage = req.query.page;
     const storedperPage = req.query.perPage
