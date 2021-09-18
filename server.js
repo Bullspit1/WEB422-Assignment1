@@ -17,8 +17,7 @@ const {query, validationResult} = require('express-validator');
 // require('dotenv').config();
 // const { MONGODB_CONN_STRING } = process.env;
     
-const accessUserName = process.env.MONGODB_CONN_UN;
-const accessPassword = process.env.MONGODB_CONN_PW;
+const accessURI = process.env.MONGODB_CONN_URI;
 
 const RestaurantDB = require("./modules/restaurantDB");
 const db = new RestaurantDB();
@@ -109,7 +108,7 @@ app.delete("/api/restaurants/:id", function(req, res){
 });
 
 
-db.initialize(`mongodb+srv://${accessUserName}:${accessPassword}@cluster0.truw5.mongodb.net/sample_restaurants?retryWrites=true&w=majority`).then(()=>{
+db.initialize(accessURI).then(()=>{
     app.listen(HTTP_PORT, ()=>{
     console.log(`server listening on: ${HTTP_PORT}`);
     });
