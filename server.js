@@ -56,7 +56,7 @@ app.post("/api/restaurants", function(req, res){
 app.get("/api/restaurants",[
     query('page').isInt({min: 1}).withMessage('page param must be a whole number greater than 1'),
     query('perPage').isInt({min: 1}).withMessage('page param must be a whole number greater than 1'),
-    query('borough').isInt().withMessage('Must be a string')
+    query('borough').isString().withMessage('Must be a string')
 ], async function(req,res) {
     const storedPage = req.query.page;
     const storedperPage = req.query.perPage
