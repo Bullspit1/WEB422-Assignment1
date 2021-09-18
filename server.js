@@ -16,12 +16,9 @@ const {query, validationResult} = require('express-validator');
 //Environment variable for connection string
 // require('dotenv').config();
 // const { MONGODB_CONN_STRING } = process.env;
-const aws = require('aws-sdk');
-
-let s3 = new aws.S3({
-    accessUserName: process.env.MONGODB_CONN_UN,
-    accessPassword: process.env.MONGODB_CONN_PW
-});
+    
+const accessUserName = process.env.MONGODB_CONN_UN;
+const accessPassword = process.env.MONGODB_CONN_PW;
 
 const RestaurantDB = require("./modules/restaurantDB");
 const db = new RestaurantDB();
@@ -112,7 +109,7 @@ app.delete("/api/restaurants/:id", function(req, res){
 });
 
 
-db.initialize(`mongodb+srv://${s3.accessUserName}:${s3.accessPassword}@cluster0.truw5.mongodb.net/sample_restaurants?retryWrites=true&w=majority`).then(()=>{
+db.initialize(`mongodb+srv://${accessUserName}:${accessPassword}@cluster0.truw5.mongodb.net/sample_restaurants?retryWrites=true&w=majority`).then(()=>{
     app.listen(HTTP_PORT, ()=>{
     console.log(`server listening on: ${HTTP_PORT}`);
     });
