@@ -10,8 +10,10 @@
   "author": "Stephen",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.991.0",
     "celebrate": "^15.0.0",
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-validator": "^6.12.1",
     "mongoose": "^6.0.5"
