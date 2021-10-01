@@ -40,7 +40,6 @@ app.post("/api/restaurants", function(req, res){
         res.status(400).json("Please provide an object");
     }else{
         db.addNewRestaurant(req.body).then((response) => {
-            console.log(response);
             res.status(201).json({message: "Restaurant successfully added"});
         }).catch((err) => {
             res.status(500).json({message: "Restaurant could not be added"});
