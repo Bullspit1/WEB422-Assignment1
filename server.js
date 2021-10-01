@@ -8,14 +8,13 @@
 * Heroku Link: https://serene-dawn-47935.herokuapp.com/
 *
 ********************************************************************************/
-
 const express = require('express');
 const cors = require('cors');
 const {query, validationResult} = require('express-validator');
 
 //Environment variable for connection string
-// require('dotenv').config();
-// const { MONGODB_CONN_STRING } = process.env;
+require('dotenv').config();
+const { MONGODB_CONN_STRING } = process.env;
     
 const accessURI = process.env.MONGODB_CONN_URI;
 
@@ -107,8 +106,8 @@ app.delete("/api/restaurants/:id", function(req, res){
     
 });
 
-
-db.initialize(accessURI).then(()=>{
+//accessURI
+db.initialize(MONGODB_CONN_STRING || accessURI).then(()=>{
     app.listen(HTTP_PORT, ()=>{
     console.log(`server listening on: ${HTTP_PORT}`);
     });
